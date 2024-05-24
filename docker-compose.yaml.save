@@ -1,5 +1,4 @@
-
-version: "2"
+version: '3.8'
 
 services:
   api-prod:
@@ -14,10 +13,9 @@ services:
       - /app/node_modules
     logging:
       driver: "json-file"
-      options: 
-        max-file: "10"
-        max-size: "5k"
-        compress: "true"
+      options:
+        max-file: "5"
+        max-size: "10m"
   ui-prod:
     build:
       context: ./myblog
@@ -30,9 +28,8 @@ services:
       - /app/node_modules
     stdin_open: true
     tty: true
-    logging:
+        logging:
       driver: "json-file"
       options: 
-        max-file: "10"
-        max-size: "5k"
-        compress: "true"
+        max-file: "5"
+        max-size: "10m"
